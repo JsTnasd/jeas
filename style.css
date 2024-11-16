@@ -1,0 +1,298 @@
+/* Archivo: styles.css */
+
+/* Reset global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Asegura que el diseño se vea bien en dispositivos móviles */
+@viewport {
+    width: device-width;
+    initial-scale: 1.0;
+    maximum-scale: 1.0;
+}
+
+/* Body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Pacifico', cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url("./fondo/DALL·E\ 2024-11-16\ 13.36.39\ -\ A\ charming\ animated-style\ illustration\ featuring\ two\ cows\ wearing\ cowboy\ hats\,\ along\ with\ puppies\ and\ kittens\ playing\ together\ on\ a\ lush\ green\ farm.\ T.webp");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    overflow: hidden;
+    color: #333;
+}
+
+/* Cuadro blanco en la parte superior */
+.title-box {
+    width: 100%;
+    background-color: white;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0;
+    z-index: 10;
+}
+
+/* Texto dentro del cuadro */
+.title-text {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.8rem;
+    color: #333;
+    margin: 0;
+}
+
+/* Contenedor principal */
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Centra los elementos verticalmente */
+    align-items: center;  /* Centra los elementos horizontalmente */
+    text-align: center;
+    height: 100vh;  /* Ocupa toda la altura de la ventana */
+    padding-top: 120px;
+    overflow: hidden;
+}
+
+/* Versos */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;  /* Ajusta el espacio entre versos */
+}
+
+.verse {
+    font-size: 2rem;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fade-in-out 3s infinite;
+    margin: 10px 0;
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Animación de aparición y desaparición del texto */
+@keyframes fade-in-out {
+    0% { opacity: 0; transform: translateY(20px); }
+    30% { opacity: 1; transform: translateY(0); }
+    70% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
+
+
+
+/* Estilo de la carta */
+.card {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    min-width: 300px;
+    backdrop-filter: blur(5px);
+    animation: showCard 1s ease-out forwards;
+    z-index: 100;
+}
+
+/* Animación de la carta */
+@keyframes showCard {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Contenido de la carta */
+.card-content {
+    text-align: center;
+}
+
+.card-content h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.card-content p {
+    font-size: 0.8rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Botón de cerrar la carta */
+.close-card-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.close-card-button:hover {
+    background-color: #e05a4f;
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .title-text {
+        font-size: 1.5rem;
+    }
+
+    .verse {
+        font-size: 1.5rem;
+        width: 90%;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 100%;
+        min-width: 250px;
+    }
+
+    .play-button {
+        font-size: 1.2rem;
+    }
+}
+
+/* Contenedor de los botones */
+.buttons-container {
+    display: flex;
+    justify-content: center; /* Centra los botones */
+    gap: 30px; /* Espacio de 30px entre los botones */
+    margin-top: 20px; /* Espacio encima de los botones */
+}
+
+/* Estilo de los botones */
+.play-button, .card-button {
+    font-family: 'Pacifico', cursive;
+    padding: 10px 20px; /* Ajustamos el tamaño del botón */
+    font-size: 1.2rem; /* Hacemos el texto más pequeño */
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.play-button:hover, .card-button:hover {
+    background-color: #d7e0cc; /* Verde más claro al hacer hover */
+}
+
+/* Filtro de desenfoque para el fondo */
+body.blurred {
+    backdrop-filter: blur(8px); /* Aplica el desenfoque al fondo */
+    -webkit-backdrop-filter: blur(8px); /* Para compatibilidad con Safari */
+}
+
+/* Carta (inicialmente oculta) */
+.card {
+    display: none; /* Inicialmente oculta */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    min-width: 300px;
+    z-index: 100;
+}
+
+/* Animación de la carta */
+@keyframes showCard {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Cuadro blanco en la parte superior (titulo) */
+.title-box.blurred {
+    backdrop-filter: blur(8px); /* Aplica el desenfoque al fondo del cuadro */
+    -webkit-backdrop-filter: blur(8px); /* Para compatibilidad con Safari */
+}
+
+/* Filtro de desenfoque para el fondo */
+body.blurred {
+    backdrop-filter: blur(8px); /* Aplica el desenfoque al fondo */
+    -webkit-backdrop-filter: blur(8px); /* Para compatibilidad con Safari */
+}
+
+#text-container {
+    text-align: center;
+    padding: 20px;
+}
+
+#text-part {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.2rem;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.buttons-container {
+    margin-top: 20px;
+}
+
+button {
+    font-family: 'Pacifico', cursive;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #ff6f61;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 0 15px;
+}
+
+button:hover {
+    background-color: #e05a4f;
+}
+
+button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+

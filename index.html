@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Para mi niña</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Contenedor principal para el resto de la página -->
+    <div class="content-container">
+        <!-- Mini soundtrack -->
+        <audio id="romantic-soundtrack" loop>
+            <source src="./song/jeas1.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+        
+        <!-- Versos -->
+        <div class="container">
+            <div id="verse-container" class="verse"></div>
+        </div>
+        
+<!-- Cuadro blanco con el título -->
+<div class="title-box">
+    <p class="title-text">Para mi niña.</p>
+</div>
+
+<!-- Contenedor de los botones -->
+<div class="buttons-container">
+    <!-- Botón de Reproducir Música -->
+    <button class="play-button" onclick="document.getElementById('romantic-soundtrack').play()">Reproducir música</button>
+
+    <!-- Botón de Carta -->
+    <button class="card-button" onclick="showCard()">Carta</button>
+</div>
+
+<!-- Carta (inicialmente oculta) -->
+<div id="card" class="card">
+    <div class="card-content">
+        <h2>Mi negrita</h2>
+        <p id="text-part">
+            Esta carta es para ti, la niña que marco una huella intachable en mi.
+        </p>
+        
+        <button class="close-card-button" onclick="closeCard()">Cerrar</button>
+        <div class="buttons-container">
+            <button id="prev-button" onclick="showPrevText()">Anterior</button>
+            <button id="next-button" onclick="showNextText()">Siguiente</button>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="script.js"></script>
+</html>
+
