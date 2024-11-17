@@ -80,7 +80,9 @@ const textParts = [
     En ella está tatuada tu olor con tinta de besos que hoy me perfuman.
     Nunca imaginé cómo sería el sabor de una rosa en mi boca hasta el día
     que te besé, y no me puedo arrancar tus espinas hechas de adiós, de tu
-    boca bebí. ¿Dónde estás? Pues me muero de sed y nunca olvidaré que me enamoré
+    boca bebí.`,
+
+    `¿Dónde estás? Pues me muero de sed y nunca olvidaré que me enamoré
     de una flor. Siempre te esperaré, no me digas adiós. Echo de menos estar al lado
     de ti. Quiero desayunar tu sonrisa, mi amor, pero no estás y busco tu beso en mi
     piel.`,
