@@ -53,6 +53,11 @@ body {
     margin-top: 50px;  /* Ajusta el espacio entre versos */
 }
 
+@keyframes fade-in {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
 .verse {
     font-size: 2rem;
     color: #333;
@@ -60,20 +65,13 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    animation: fade-in-out 3s infinite;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave */
     margin: 10px 0;
     width: 80%;
     max-width: 600px;
+    opacity: 1; /* Inicialmente visible */
+    transform: translateY(0); /* Sin movimiento inicial */
 }
-
-/* Animación de aparición y desaparición del texto */
-@keyframes fade-in-out {
-    0% { opacity: 0; transform: translateY(20px); }
-    30% { opacity: 1; transform: translateY(0); }
-    70% { opacity: 1; }
-    100% { opacity: 0; transform: translateY(-20px); }
-}
-
 
 
 /* Estilo de la carta */

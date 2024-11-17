@@ -1,5 +1,5 @@
-document.querySelector(".next-button").addEventListener("click", function() {
-
+// Array de versos
+document.querySelector(".next-button").addEventListener("click", function () {
 const verses = [
     "Cruzaré los montes, los ríos, los valles",
     "Por irte a encontrar",
@@ -9,37 +9,29 @@ const verses = [
     "Y vivir la gloria de estar a tu lado",
     "Porque en mí ya siento que te necesito",
     "Que me he enamorado",
-    "Por poder mirarme en tus ojos bonitos",
-    "Y vivir la gloria de estar a tu lado",
-    "Porque en mí ya siento que te necesito",
     "Eso y más haré",
     "Por asegurar la sonrisa de tu alma",
     "Buscando equidad",
-    "Yo podría empeñar lo más caro que tengo",
-    "Que es mi libertad",
-    "Y sería un honor, ay, amor, ser tu esclavo",
-    "Sería tu juguete por mi voluntad",
-    "Y si un día glorioso en tus brazos acabo",
-    "¡Qué felicidad!",
-    "Sí, sería un honor, ay, amor, ser tu esclavo",
-    "Sería tu juguete por mi voluntad",
-    "Y si un día glorioso en tus brazos acabo",
     "¡Qué felicidad!"
 ];
 
-
-const container = document.getElementById('verse-container');
-
+const container = document.getElementById("verse-container");
 let index = 0;
 
 function showVerse() {
-    container.textContent = verses[index];
-    index = (index + 1) % verses.length; // Repetir en bucle
+    container.style.opacity = "0"; // Oculta el verso actual
+    container.style.transform = "translateY(20px)"; // Añade un pequeño desplazamiento
+    setTimeout(() => {
+        container.textContent = verses[index];
+        index = (index + 1) % verses.length; // Ciclo de versos
+        container.style.opacity = "1"; // Muestra el nuevo verso
+        container.style.transform = "translateY(0)"; // Restablece la posición
+    }, 500); // Duración de la transición
 }
 
-setInterval(showVerse, 3000);
+setInterval(showVerse, 3000); // Cambia cada 3 segundos
+});
 
-})
 
 // Función para mostrar la carta
 function showCard() {
@@ -86,7 +78,12 @@ const textParts = [
     Nadie es dueño de tu corazón,\n
     Pero nunca te olvides de mí.\n
 
-    Lloraré recuerdos de ti, pues siempre te buscaré en mi piel, mi negrita bella.`
+    Lloraré recuerdos de ti, pues siempre te buscaré en mi piel, mi negrita bella.`,
+
+    `Cuando te miro, mi cuerpo reacciona con un deseo imparable: anhelo tocarte, besar
+    tus labios, abrazarte en un sinfín de pasión. Un torrente de emociones me inunda,
+    y mi ser se pone erecto, testigo de lo que provocas en mí. Quiero ser uno contigo, 
+    penetrarte, cogerte, llenarte por completo con todo lo que soy.`
 ];
 
 // Función para mostrar el siguiente texto
