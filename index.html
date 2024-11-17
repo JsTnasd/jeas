@@ -4,10 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Para mi niña</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Pantalla de bienvenida -->
+    <div id="welcome-screen" class="welcome-screen">
+        <div class="welcome-content">
+            <div class="profile-container">
+                <img id="profile-picture" src="./fondo/1.jpg" 
+                     alt="Foto de perfil" 
+                     class="profile-picture">
+                     <button id="change-picture-btn" class="change-picture-btn" onclick="changeProfilePicture()">🦦</button>
+                     <span class="profile-text">Toca la nutria</span>
+            </div>
+            <h1>Para mi niña (Doc McStuffins)</h1>
+            <div class="welcome-buttons">
+                <button class="next-button" onclick="playMusic(); hideWelcome();">Siguiente</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Contenedor principal para el resto de la página -->
     <div class="content-container">
         <!-- Mini soundtrack -->
@@ -21,15 +40,9 @@
             <div id="verse-container" class="verse"></div>
         </div>
         
-<!-- Cuadro blanco con el título -->
-<div class="title-box">
-    <p class="title-text">Para mi niña.</p>
-</div>
-
 <!-- Contenedor de los botones -->
 <div class="buttons-container">
-    <!-- Botón de Reproducir Música -->
-    <button class="play-button" onclick="document.getElementById('romantic-soundtrack').play()">Reproducir música</button>
+    
 
     <!-- Botón de Carta -->
     <button class="card-button" onclick="showCard()">Carta</button>
@@ -40,7 +53,6 @@
     <div class="card-content">
         <h2>Mi negrita</h2>
         <p id="text-part">
-            Esta carta es para ti, la niña que marco una huella intachable en mi.
         </p>
         
         <button class="close-card-button" onclick="closeCard()">Cerrar</button>
