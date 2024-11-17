@@ -1,3 +1,5 @@
+document.querySelector(".next-button").addEventListener("click", function() {
+
 const verses = [
     "Cruzaré los montes, los ríos, los valles",
     "Por irte a encontrar",
@@ -25,26 +27,19 @@ const verses = [
     "¡Qué felicidad!"
 ];
 
+
 const container = document.getElementById('verse-container');
 
 let index = 0;
-let verseInterval;  // Variable para almacenar el setInterval
 
-// Función para mostrar el verso
 function showVerse() {
     container.textContent = verses[index];
     index = (index + 1) % verses.length; // Repetir en bucle
 }
 
-// Inicia el ciclo de los versos
-function startVerseCycle() {
-    verseInterval = setInterval(showVerse, 3000); // Cambia cada 3 segundos
-}
+setInterval(showVerse, 3000);
 
-// Detiene el ciclo de los versos
-function stopVerseCycle() {
-    clearInterval(verseInterval); // Detiene el ciclo de versos
-}
+})
 
 // Función para mostrar la carta
 function showCard() {
@@ -52,7 +47,6 @@ function showCard() {
     document.body.classList.add("blurred");
 
     // Detiene el ciclo de los versos cuando se abre la carta
-    stopVerseCycle();
 
     // Configurar los botones al abrir la carta
     updateButtons();
@@ -64,7 +58,6 @@ function closeCard() {
     document.body.classList.remove("blurred");
 
     // Reinicia el ciclo de versos cuando se cierra la carta
-    startVerseCycle();
 }
 
 // Función para mostrar el siguiente texto
@@ -156,7 +149,6 @@ function nextPage() {
     document.querySelector(".content-container").style.display = "block";
     
     // Iniciar el ciclo de versos
-    startVerseCycle();
 }
 
 // Iniciar el ciclo de versos sólo cuando se presiona el botón "Siguiente"
